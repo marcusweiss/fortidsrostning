@@ -59,7 +59,7 @@ def parse_2022_totals(text: str) -> tuple[list[str], dict[str, int]]:
     return date_columns, daily
 
 
-def parse_daily_totals(text: str, scale_factor: float = 1.0) -> tuple[list[str], dict[str, int]]:
+def parse_daily_totals(text: str) -> tuple[list[str], dict[str, int]]:
     reader = csv.DictReader(StringIO(text), delimiter=";")
     if not reader.fieldnames:
         raise RuntimeError("CSV saknar kolumnrubriker")
@@ -78,8 +78,7 @@ def parse_daily_totals(text: str, scale_factor: float = 1.0) -> tuple[list[str],
     if summary_rows:
         summary = summary_rows[0]
         daily = {
-            date: round(int(summary.get(date) or 0) * scale_factor)
-            for date in date_columns
+            date: int(summary.get(date) or 0) for date in date_columns
         }
         return date_columns, daily
 
@@ -87,9 +86,7 @@ def parse_daily_totals(text: str, scale_factor: float = 1.0) -> tuple[list[str],
         row for row in rows if row.get(lokal_key, "").strip().upper() != "SUMMA"
     ]
     daily = {
-        date: round(
-            sum(int(row.get(date) or 0) for row in detail_rows) * scale_factor
-        )
+        date: sum(int(row.get(date) or 0) for row in detail_rows)
         for date in date_columns
     }
     return date_columns, daily
@@ -150,24 +147,36 @@ def main() -> int:
         if election["year"] == 2022:
             date_columns, daily = parse_2022_totals(election_text)
         else:
-            date_columns, daily = parse_daily_totals(
-                election_text, election.get("scale_factor", 1.0)
-            )
-        election_series = trim_series(
-            build_series(
-                date_columns,
-                daily,
-                election["eligible_voters"],
-                reference_turnout,
-            )
+            date_columns, daily = parse_daily_totals(election_text)
+        election_series = build_series(
+            date_columns,
+            daily,
+            election["eligible_voters"],
+            reference_turnout,
         )
         comparison.append(
             {
                 "year": election["year"],
                 "eligible_voters": election["eligible_voters"],
+                "turnout_pct": round(election.get("turnout", reference_turnout) * 100, 2),
+                "final_early_share_of_voters_pct": None,
                 "points": election_series,
             }
         )
+
+    for item in comparison:
+        last = item["points"][-1] if item["points"] else None
+        if last and item["eligible_voters"]:
+            voters = item["eligible_voters"] * (
+                next(
+                    e["turnout"]
+                    for e in config["comparison_elections"]
+                    if e["year"] == item["year"]
+                )
+            )
+            item["final_early_share_of_voters_pct"] = round(
+                100 * last["cumulative"] / voters, 2
+            )
     max_day = max(
         [len(active), *(len(item["points"]) for item in comparison)],
         default=0,
