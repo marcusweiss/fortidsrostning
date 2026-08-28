@@ -1,0 +1,806 @@
+{
+  "updated_at": "2026-08-28T11:49:54.846250+00:00",
+  "source_url": "https://data.val.se/filer/val2026/rostmottagning/mottagna-fortidsroster-val2026.csv",
+  "source_name": "Valmyndigheten",
+  "election_day": "2026-09-13",
+  "eligible_voters": 8046725,
+  "reference_turnout_pct": 84.21,
+  "expected_voters": 6776147,
+  "max_day": 19,
+  "latest": {
+    "day": 2,
+    "date": "2026-08-27",
+    "daily": 154708,
+    "cumulative": 301297,
+    "pct_eligible": 3.744,
+    "pct_expected_votes": 4.446
+  },
+  "series": [
+    {
+      "day": 1,
+      "date": "2026-08-26",
+      "daily": 146589,
+      "cumulative": 146589,
+      "pct_eligible": 1.822,
+      "pct_expected_votes": 2.163
+    },
+    {
+      "day": 2,
+      "date": "2026-08-27",
+      "daily": 154708,
+      "cumulative": 301297,
+      "pct_eligible": 3.744,
+      "pct_expected_votes": 4.446
+    },
+    {
+      "day": 3,
+      "date": "2026-08-28",
+      "daily": 0,
+      "cumulative": 301297,
+      "pct_eligible": 3.744,
+      "pct_expected_votes": 4.446
+    },
+    {
+      "day": 4,
+      "date": "2026-08-29",
+      "daily": 0,
+      "cumulative": 301297,
+      "pct_eligible": 3.744,
+      "pct_expected_votes": 4.446
+    },
+    {
+      "day": 5,
+      "date": "2026-08-30",
+      "daily": 0,
+      "cumulative": 301297,
+      "pct_eligible": 3.744,
+      "pct_expected_votes": 4.446
+    },
+    {
+      "day": 6,
+      "date": "2026-08-31",
+      "daily": 0,
+      "cumulative": 301297,
+      "pct_eligible": 3.744,
+      "pct_expected_votes": 4.446
+    },
+    {
+      "day": 7,
+      "date": "2026-09-01",
+      "daily": 0,
+      "cumulative": 301297,
+      "pct_eligible": 3.744,
+      "pct_expected_votes": 4.446
+    },
+    {
+      "day": 8,
+      "date": "2026-09-02",
+      "daily": 0,
+      "cumulative": 301297,
+      "pct_eligible": 3.744,
+      "pct_expected_votes": 4.446
+    },
+    {
+      "day": 9,
+      "date": "2026-09-03",
+      "daily": 0,
+      "cumulative": 301297,
+      "pct_eligible": 3.744,
+      "pct_expected_votes": 4.446
+    },
+    {
+      "day": 10,
+      "date": "2026-09-04",
+      "daily": 0,
+      "cumulative": 301297,
+      "pct_eligible": 3.744,
+      "pct_expected_votes": 4.446
+    },
+    {
+      "day": 11,
+      "date": "2026-09-05",
+      "daily": 0,
+      "cumulative": 301297,
+      "pct_eligible": 3.744,
+      "pct_expected_votes": 4.446
+    },
+    {
+      "day": 12,
+      "date": "2026-09-06",
+      "daily": 0,
+      "cumulative": 301297,
+      "pct_eligible": 3.744,
+      "pct_expected_votes": 4.446
+    },
+    {
+      "day": 13,
+      "date": "2026-09-07",
+      "daily": 0,
+      "cumulative": 301297,
+      "pct_eligible": 3.744,
+      "pct_expected_votes": 4.446
+    },
+    {
+      "day": 14,
+      "date": "2026-09-08",
+      "daily": 0,
+      "cumulative": 301297,
+      "pct_eligible": 3.744,
+      "pct_expected_votes": 4.446
+    },
+    {
+      "day": 15,
+      "date": "2026-09-09",
+      "daily": 0,
+      "cumulative": 301297,
+      "pct_eligible": 3.744,
+      "pct_expected_votes": 4.446
+    },
+    {
+      "day": 16,
+      "date": "2026-09-10",
+      "daily": 0,
+      "cumulative": 301297,
+      "pct_eligible": 3.744,
+      "pct_expected_votes": 4.446
+    },
+    {
+      "day": 17,
+      "date": "2026-09-11",
+      "daily": 0,
+      "cumulative": 301297,
+      "pct_eligible": 3.744,
+      "pct_expected_votes": 4.446
+    },
+    {
+      "day": 18,
+      "date": "2026-09-12",
+      "daily": 0,
+      "cumulative": 301297,
+      "pct_eligible": 3.744,
+      "pct_expected_votes": 4.446
+    },
+    {
+      "day": 19,
+      "date": "2026-09-13",
+      "daily": 0,
+      "cumulative": 301297,
+      "pct_eligible": 3.744,
+      "pct_expected_votes": 4.446
+    }
+  ],
+  "comparison": [
+    {
+      "year": 2010,
+      "eligible_voters": 7066947,
+      "points": [
+        {
+          "day": 1,
+          "date": "2010-09-01",
+          "daily": 36700,
+          "cumulative": 36700,
+          "pct_eligible": 0.519,
+          "pct_expected_votes": 0.617
+        },
+        {
+          "day": 2,
+          "date": "2010-09-02",
+          "daily": 43230,
+          "cumulative": 79930,
+          "pct_eligible": 1.131,
+          "pct_expected_votes": 1.343
+        },
+        {
+          "day": 3,
+          "date": "2010-09-03",
+          "daily": 38654,
+          "cumulative": 118584,
+          "pct_eligible": 1.678,
+          "pct_expected_votes": 1.993
+        },
+        {
+          "day": 4,
+          "date": "2010-09-04",
+          "daily": 19154,
+          "cumulative": 137738,
+          "pct_eligible": 1.949,
+          "pct_expected_votes": 2.315
+        },
+        {
+          "day": 5,
+          "date": "2010-09-05",
+          "daily": 8214,
+          "cumulative": 145952,
+          "pct_eligible": 2.065,
+          "pct_expected_votes": 2.453
+        },
+        {
+          "day": 6,
+          "date": "2010-09-06",
+          "daily": 55238,
+          "cumulative": 201190,
+          "pct_eligible": 2.847,
+          "pct_expected_votes": 3.381
+        },
+        {
+          "day": 7,
+          "date": "2010-09-07",
+          "daily": 50656,
+          "cumulative": 251846,
+          "pct_eligible": 3.564,
+          "pct_expected_votes": 4.232
+        },
+        {
+          "day": 8,
+          "date": "2010-09-08",
+          "daily": 55160,
+          "cumulative": 307006,
+          "pct_eligible": 4.344,
+          "pct_expected_votes": 5.159
+        },
+        {
+          "day": 9,
+          "date": "2010-09-09",
+          "daily": 60010,
+          "cumulative": 367016,
+          "pct_eligible": 5.193,
+          "pct_expected_votes": 6.167
+        },
+        {
+          "day": 10,
+          "date": "2010-09-10",
+          "daily": 55235,
+          "cumulative": 422251,
+          "pct_eligible": 5.975,
+          "pct_expected_votes": 7.095
+        },
+        {
+          "day": 11,
+          "date": "2010-09-11",
+          "daily": 33830,
+          "cumulative": 456081,
+          "pct_eligible": 6.454,
+          "pct_expected_votes": 7.664
+        },
+        {
+          "day": 12,
+          "date": "2010-09-12",
+          "daily": 26632,
+          "cumulative": 482713,
+          "pct_eligible": 6.831,
+          "pct_expected_votes": 8.111
+        },
+        {
+          "day": 13,
+          "date": "2010-09-13",
+          "daily": 100598,
+          "cumulative": 583311,
+          "pct_eligible": 8.254,
+          "pct_expected_votes": 9.802
+        },
+        {
+          "day": 14,
+          "date": "2010-09-14",
+          "daily": 100139,
+          "cumulative": 683450,
+          "pct_eligible": 9.671,
+          "pct_expected_votes": 11.484
+        },
+        {
+          "day": 15,
+          "date": "2010-09-15",
+          "daily": 114890,
+          "cumulative": 798340,
+          "pct_eligible": 11.297,
+          "pct_expected_votes": 13.415
+        },
+        {
+          "day": 16,
+          "date": "2010-09-16",
+          "daily": 130068,
+          "cumulative": 928408,
+          "pct_eligible": 13.137,
+          "pct_expected_votes": 15.601
+        },
+        {
+          "day": 17,
+          "date": "2010-09-17",
+          "daily": 137296,
+          "cumulative": 1065704,
+          "pct_eligible": 15.08,
+          "pct_expected_votes": 17.908
+        },
+        {
+          "day": 18,
+          "date": "2010-09-18",
+          "daily": 77986,
+          "cumulative": 1143690,
+          "pct_eligible": 16.184,
+          "pct_expected_votes": 19.218
+        },
+        {
+          "day": 19,
+          "date": "2010-09-19",
+          "daily": 45133,
+          "cumulative": 1188823,
+          "pct_eligible": 16.822,
+          "pct_expected_votes": 19.977
+        }
+      ]
+    },
+    {
+      "year": 2014,
+      "eligible_voters": 7564274,
+      "points": [
+        {
+          "day": 1,
+          "date": "2014-08-27",
+          "daily": 40476,
+          "cumulative": 40476,
+          "pct_eligible": 0.535,
+          "pct_expected_votes": 0.635
+        },
+        {
+          "day": 2,
+          "date": "2014-08-28",
+          "daily": 49688,
+          "cumulative": 90164,
+          "pct_eligible": 1.192,
+          "pct_expected_votes": 1.415
+        },
+        {
+          "day": 3,
+          "date": "2014-08-29",
+          "daily": 41255,
+          "cumulative": 131419,
+          "pct_eligible": 1.737,
+          "pct_expected_votes": 2.063
+        },
+        {
+          "day": 4,
+          "date": "2014-08-30",
+          "daily": 20839,
+          "cumulative": 152258,
+          "pct_eligible": 2.013,
+          "pct_expected_votes": 2.39
+        },
+        {
+          "day": 5,
+          "date": "2014-08-31",
+          "daily": 11190,
+          "cumulative": 163448,
+          "pct_eligible": 2.161,
+          "pct_expected_votes": 2.566
+        },
+        {
+          "day": 6,
+          "date": "2014-09-01",
+          "daily": 61200,
+          "cumulative": 224648,
+          "pct_eligible": 2.97,
+          "pct_expected_votes": 3.527
+        },
+        {
+          "day": 7,
+          "date": "2014-09-02",
+          "daily": 60601,
+          "cumulative": 285249,
+          "pct_eligible": 3.771,
+          "pct_expected_votes": 4.478
+        },
+        {
+          "day": 8,
+          "date": "2014-09-03",
+          "daily": 62272,
+          "cumulative": 347521,
+          "pct_eligible": 4.594,
+          "pct_expected_votes": 5.456
+        },
+        {
+          "day": 9,
+          "date": "2014-09-04",
+          "daily": 64290,
+          "cumulative": 411811,
+          "pct_eligible": 5.444,
+          "pct_expected_votes": 6.465
+        },
+        {
+          "day": 10,
+          "date": "2014-09-05",
+          "daily": 57084,
+          "cumulative": 468895,
+          "pct_eligible": 6.199,
+          "pct_expected_votes": 7.361
+        },
+        {
+          "day": 11,
+          "date": "2014-09-06",
+          "daily": 36804,
+          "cumulative": 505699,
+          "pct_eligible": 6.685,
+          "pct_expected_votes": 7.939
+        },
+        {
+          "day": 12,
+          "date": "2014-09-07",
+          "daily": 28923,
+          "cumulative": 534622,
+          "pct_eligible": 7.068,
+          "pct_expected_votes": 8.393
+        },
+        {
+          "day": 13,
+          "date": "2014-09-08",
+          "daily": 106422,
+          "cumulative": 641044,
+          "pct_eligible": 8.475,
+          "pct_expected_votes": 10.064
+        },
+        {
+          "day": 14,
+          "date": "2014-09-09",
+          "daily": 115097,
+          "cumulative": 756141,
+          "pct_eligible": 9.996,
+          "pct_expected_votes": 11.871
+        },
+        {
+          "day": 15,
+          "date": "2014-09-10",
+          "daily": 133653,
+          "cumulative": 889794,
+          "pct_eligible": 11.763,
+          "pct_expected_votes": 13.969
+        },
+        {
+          "day": 16,
+          "date": "2014-09-11",
+          "daily": 149252,
+          "cumulative": 1039046,
+          "pct_eligible": 13.736,
+          "pct_expected_votes": 16.312
+        },
+        {
+          "day": 17,
+          "date": "2014-09-12",
+          "daily": 155048,
+          "cumulative": 1194094,
+          "pct_eligible": 15.786,
+          "pct_expected_votes": 18.746
+        },
+        {
+          "day": 18,
+          "date": "2014-09-13",
+          "daily": 97681,
+          "cumulative": 1291775,
+          "pct_eligible": 17.077,
+          "pct_expected_votes": 20.279
+        },
+        {
+          "day": 19,
+          "date": "2014-09-14",
+          "daily": 44532,
+          "cumulative": 1336307,
+          "pct_eligible": 17.666,
+          "pct_expected_votes": 20.979
+        }
+      ]
+    },
+    {
+      "year": 2018,
+      "eligible_voters": 7504024,
+      "points": [
+        {
+          "day": 1,
+          "date": "2018-08-22",
+          "daily": 43957,
+          "cumulative": 43957,
+          "pct_eligible": 0.586,
+          "pct_expected_votes": 0.696
+        },
+        {
+          "day": 2,
+          "date": "2018-08-23",
+          "daily": 51634,
+          "cumulative": 95591,
+          "pct_eligible": 1.274,
+          "pct_expected_votes": 1.513
+        },
+        {
+          "day": 3,
+          "date": "2018-08-24",
+          "daily": 45556,
+          "cumulative": 141147,
+          "pct_eligible": 1.881,
+          "pct_expected_votes": 2.234
+        },
+        {
+          "day": 4,
+          "date": "2018-08-25",
+          "daily": 23906,
+          "cumulative": 165053,
+          "pct_eligible": 2.2,
+          "pct_expected_votes": 2.612
+        },
+        {
+          "day": 5,
+          "date": "2018-08-26",
+          "daily": 17048,
+          "cumulative": 182101,
+          "pct_eligible": 2.427,
+          "pct_expected_votes": 2.882
+        },
+        {
+          "day": 6,
+          "date": "2018-08-27",
+          "daily": 66444,
+          "cumulative": 248545,
+          "pct_eligible": 3.312,
+          "pct_expected_votes": 3.933
+        },
+        {
+          "day": 7,
+          "date": "2018-08-28",
+          "daily": 66652,
+          "cumulative": 315197,
+          "pct_eligible": 4.2,
+          "pct_expected_votes": 4.988
+        },
+        {
+          "day": 8,
+          "date": "2018-08-29",
+          "daily": 70262,
+          "cumulative": 385459,
+          "pct_eligible": 5.137,
+          "pct_expected_votes": 6.1
+        },
+        {
+          "day": 9,
+          "date": "2018-08-30",
+          "daily": 70978,
+          "cumulative": 456437,
+          "pct_eligible": 6.083,
+          "pct_expected_votes": 7.223
+        },
+        {
+          "day": 10,
+          "date": "2018-08-31",
+          "daily": 63730,
+          "cumulative": 520167,
+          "pct_eligible": 6.932,
+          "pct_expected_votes": 8.232
+        },
+        {
+          "day": 11,
+          "date": "2018-09-01",
+          "daily": 42456,
+          "cumulative": 562623,
+          "pct_eligible": 7.498,
+          "pct_expected_votes": 8.903
+        },
+        {
+          "day": 12,
+          "date": "2018-09-02",
+          "daily": 38480,
+          "cumulative": 601103,
+          "pct_eligible": 8.01,
+          "pct_expected_votes": 9.512
+        },
+        {
+          "day": 13,
+          "date": "2018-09-03",
+          "daily": 112344,
+          "cumulative": 713447,
+          "pct_eligible": 9.508,
+          "pct_expected_votes": 11.29
+        },
+        {
+          "day": 14,
+          "date": "2018-09-04",
+          "daily": 123354,
+          "cumulative": 836801,
+          "pct_eligible": 11.151,
+          "pct_expected_votes": 13.242
+        },
+        {
+          "day": 15,
+          "date": "2018-09-05",
+          "daily": 142368,
+          "cumulative": 979169,
+          "pct_eligible": 13.049,
+          "pct_expected_votes": 15.495
+        },
+        {
+          "day": 16,
+          "date": "2018-09-06",
+          "daily": 162346,
+          "cumulative": 1141515,
+          "pct_eligible": 15.212,
+          "pct_expected_votes": 18.064
+        },
+        {
+          "day": 17,
+          "date": "2018-09-07",
+          "daily": 164746,
+          "cumulative": 1306261,
+          "pct_eligible": 17.407,
+          "pct_expected_votes": 20.672
+        },
+        {
+          "day": 18,
+          "date": "2018-09-08",
+          "daily": 110172,
+          "cumulative": 1416433,
+          "pct_eligible": 18.876,
+          "pct_expected_votes": 22.415
+        },
+        {
+          "day": 19,
+          "date": "2018-09-09",
+          "daily": 42601,
+          "cumulative": 1459034,
+          "pct_eligible": 19.443,
+          "pct_expected_votes": 23.089
+        }
+      ]
+    },
+    {
+      "year": 2022,
+      "eligible_voters": 7775390,
+      "points": [
+        {
+          "day": 1,
+          "date": "2022-08-24",
+          "daily": 105754,
+          "cumulative": 105754,
+          "pct_eligible": 1.36,
+          "pct_expected_votes": 1.615
+        },
+        {
+          "day": 2,
+          "date": "2022-08-25",
+          "daily": 117626,
+          "cumulative": 223380,
+          "pct_eligible": 2.873,
+          "pct_expected_votes": 3.412
+        },
+        {
+          "day": 3,
+          "date": "2022-08-26",
+          "daily": 98259,
+          "cumulative": 321639,
+          "pct_eligible": 4.137,
+          "pct_expected_votes": 4.912
+        },
+        {
+          "day": 4,
+          "date": "2022-08-27",
+          "daily": 52651,
+          "cumulative": 374290,
+          "pct_eligible": 4.814,
+          "pct_expected_votes": 5.716
+        },
+        {
+          "day": 5,
+          "date": "2022-08-28",
+          "daily": 46873,
+          "cumulative": 421163,
+          "pct_eligible": 5.417,
+          "pct_expected_votes": 6.432
+        },
+        {
+          "day": 6,
+          "date": "2022-08-29",
+          "daily": 143923,
+          "cumulative": 565086,
+          "pct_eligible": 7.268,
+          "pct_expected_votes": 8.63
+        },
+        {
+          "day": 7,
+          "date": "2022-08-30",
+          "daily": 141991,
+          "cumulative": 707077,
+          "pct_eligible": 9.094,
+          "pct_expected_votes": 10.799
+        },
+        {
+          "day": 8,
+          "date": "2022-08-31",
+          "daily": 145358,
+          "cumulative": 852435,
+          "pct_eligible": 10.963,
+          "pct_expected_votes": 13.019
+        },
+        {
+          "day": 9,
+          "date": "2022-09-01",
+          "daily": 149303,
+          "cumulative": 1001738,
+          "pct_eligible": 12.883,
+          "pct_expected_votes": 15.299
+        },
+        {
+          "day": 10,
+          "date": "2022-09-02",
+          "daily": 139656,
+          "cumulative": 1141394,
+          "pct_eligible": 14.68,
+          "pct_expected_votes": 17.432
+        },
+        {
+          "day": 11,
+          "date": "2022-09-03",
+          "daily": 98110,
+          "cumulative": 1239504,
+          "pct_eligible": 15.941,
+          "pct_expected_votes": 18.93
+        },
+        {
+          "day": 12,
+          "date": "2022-09-04",
+          "daily": 104606,
+          "cumulative": 1344110,
+          "pct_eligible": 17.287,
+          "pct_expected_votes": 20.528
+        },
+        {
+          "day": 13,
+          "date": "2022-09-05",
+          "daily": 241703,
+          "cumulative": 1585813,
+          "pct_eligible": 20.395,
+          "pct_expected_votes": 24.22
+        },
+        {
+          "day": 14,
+          "date": "2022-09-06",
+          "daily": 262619,
+          "cumulative": 1848432,
+          "pct_eligible": 23.773,
+          "pct_expected_votes": 28.23
+        },
+        {
+          "day": 15,
+          "date": "2022-09-07",
+          "daily": 294596,
+          "cumulative": 2143028,
+          "pct_eligible": 27.562,
+          "pct_expected_votes": 32.73
+        },
+        {
+          "day": 16,
+          "date": "2022-09-08",
+          "daily": 337064,
+          "cumulative": 2480092,
+          "pct_eligible": 31.897,
+          "pct_expected_votes": 37.878
+        },
+        {
+          "day": 17,
+          "date": "2022-09-09",
+          "daily": 340345,
+          "cumulative": 2820437,
+          "pct_eligible": 36.274,
+          "pct_expected_votes": 43.076
+        },
+        {
+          "day": 18,
+          "date": "2022-09-10",
+          "daily": 238008,
+          "cumulative": 3058445,
+          "pct_eligible": 39.335,
+          "pct_expected_votes": 46.711
+        },
+        {
+          "day": 19,
+          "date": "2022-09-11",
+          "daily": 95183,
+          "cumulative": 3153628,
+          "pct_eligible": 40.559,
+          "pct_expected_votes": 48.164
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Förtidsröster – riksdagsvalet 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f8fb;
+      --bg-accent: #e8eef7;
+      --surface: #ffffff;
+      --surface-2: #f9fbfd;
+      --text: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #94a3b8;
+      --border: #e2e8f0;
+      --border-soft: #eef2f7;
+      --primary: #005ea8;
+      --primary-soft: rgba(0, 94, 168, 0.1);
+      --primary-glow: rgba(0, 94, 168, 0.25);
+      --success: #059669;
+      --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
+      --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.06);
+      --shadow-lg: 0 20px 50px rgba(15, 23, 42, 0.08);
+      --radius: 16px;
+      --radius-sm: 10px;
+      --chart-grid: rgba(148, 163, 184, 0.25);
+      --chart-text: #64748b;
+      --font: "DM Sans", system-ui, sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: dark;
+        --bg: #0b1120;
+        --bg-accent: #111827;
+        --surface: #131c2e;
+        --surface-2: #182236;
+        --text: #f1f5f9;
+        --text-secondary: #cbd5e1;
+        --text-muted: #64748b;
+        --border: #243044;
+        --border-soft: #1a2438;
+        --primary: #5eb3ff;
+        --primary-soft: rgba(94, 179, 255, 0.12);
+        --primary-glow: rgba(94, 179, 255, 0.2);
+        --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+        --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.25);
+        --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.35);
+        --chart-grid: rgba(100, 116, 139, 0.2);
+        --chart-text: #94a3b8;
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 1.25rem 1.25rem 3rem;
+    }
+
+    .hero {
+      position: relative;
+      padding: 1.75rem 1.75rem 1.5rem;
+      border-radius: calc(var(--radius) + 4px);
+      background:
+        radial-gradient(circle at 100% 0%, var(--primary-soft), transparent 42%),
+        linear-gradient(180deg, var(--surface) 0%, var(--surface-2) 100%);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-md);
+      margin-bottom: 1.25rem;
+      overflow: hidden;
+    }
+
+    .hero-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      background: var(--primary-soft);
+      color: var(--primary);
+      border: 1px solid transparent;
+    }
+
+    .badge.muted {
+      background: var(--surface-2);
+      color: var(--text-secondary);
+      border-color: var(--border);
+    }
+
+    .badge .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--success);
+      box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.2);
+    }
+
+    .hero h1 {
+      margin: 0 0 0.35rem;
+      font-size: clamp(1.75rem, 4vw, 2.35rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-lede {
+      margin: 0;
+      color: var(--text-secondary);
+      max-width: 52ch;
+      font-size: 0.98rem;
+    }
+
+    .hero-metric {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero-metric { grid-template-columns: 1fr; }
+    }
+
+    .metric-primary {
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .metric-primary .label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .metric-primary .value {
+      font-size: clamp(2.2rem, 6vw, 3rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+
+    .metric-primary .detail {
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+    }
+
+    .timeline-card {
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.85rem;
+    }
+
+    .timeline-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      font-size: 0.92rem;
+    }
+
+    .timeline-row strong {
+      font-size: 1.05rem;
+      letter-spacing: -0.02em;
+    }
+
+    .timeline-row span {
+      color: var(--text-secondary);
+    }
+
+    .progress-track {
+      height: 8px;
+      border-radius: 999px;
+      background: var(--border-soft);
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--primary), #38bdf8);
+      transition: width 0.6s ease;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.85rem;
+      margin-bottom: 1.25rem;
+    }
+
+    @media (max-width: 768px) {
+      .stats-grid { grid-template-columns: 1fr; }
+    }
+
+    .stat-card {
+      padding: 1.1rem 1.2rem;
+      border-radius: var(--radius-sm);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .stat-card .label {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+      font-weight: 500;
+    }
+
+    .stat-card .value {
+      font-size: 1.55rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.65rem;
+    }
+
+    .stat-bar {
+      height: 4px;
+      border-radius: 999px;
+      background: var(--border-soft);
+      overflow: hidden;
+    }
+
+    .stat-bar span {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: var(--primary);
+    }
+
+    .stat-card .hint {
+      margin-top: 0.55rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+
+    .panel-head {
+      padding: 1.15rem 1.25rem 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .panel-head h2 {
+      margin: 0 0 0.3rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .panel-head p {
+      margin: 0;
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+      max-width: 48ch;
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem 0.85rem;
+      padding: 0.85rem 1.25rem 0;
+    }
+
+    .legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+
+    .legend-item .swatch {
+      width: 12px;
+      height: 3px;
+      border-radius: 999px;
+    }
+
+    .legend-item.current {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .legend-item.current .swatch {
+      height: 4px;
+      box-shadow: 0 0 8px var(--primary-glow);
+    }
+
+    .chart-wrap {
+      position: relative;
+      height: 360px;
+      padding: 0.75rem 0.5rem 1rem;
+    }
+
+    .tabs {
+      display: inline-flex;
+      padding: 0.25rem;
+      border-radius: 999px;
+      background: var(--bg-accent);
+      border: 1px solid var(--border);
+      gap: 0.15rem;
+    }
+
+    .tab {
+      appearance: none;
+      border: 0;
+      background: transparent;
+      color: var(--text-secondary);
+      font: inherit;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.5rem 0.95rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .tab:hover {
+      color: var(--text);
+    }
+
+    .tab.active {
+      background: var(--surface);
+      color: var(--text);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .chart-panel { display: none; }
+    .chart-panel.active { display: block; }
+
+    footer {
+      margin-top: 1.5rem;
+      padding: 1rem 1.25rem;
+      border-radius: var(--radius-sm);
+      background: var(--surface-2);
+      border: 1px solid var(--border-soft);
+      color: var(--text-muted);
+      font-size: 0.82rem;
+    }
+
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    footer a:hover { text-decoration: underline; }
+
+    .error {
+      margin-bottom: 1rem;
+      padding: 1rem 1.1rem;
+      border-radius: var(--radius-sm);
+      background: #fef2f2;
+      color: #991b1b;
+      border: 1px solid #fecaca;
+      font-size: 0.92rem;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .error {
+        background: #3f1212;
+        color: #fecaca;
+        border-color: #7f1d1d;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <div class="hero-top">
+        <div class="badge-row">
+          <span class="badge">Riksdagsvalet 2026</span>
+          <span class="badge muted" id="election-badge">Valdag 13 sep</span>
+        </div>
+        <span class="badge" id="updated-badge"><span class="dot"></span> Uppdateras automatiskt</span>
+      </div>
+      <h1>Förtidsröster</h1>
+      <p class="hero-lede" id="meta">Laddar data från Valmyndigheten …</p>
+    </header>
+
+    <div id="error" class="error" hidden></div>
+
+    <section class="hero-metric">
+      <article class="metric-primary">
+        <div class="label">Mottagna förtidsröster</div>
+        <div class="value" id="hero-votes">—</div>
+        <div class="detail" id="hero-detail">—</div>
+      </article>
+      <article class="timeline-card">
+        <div class="timeline-row">
+          <strong id="timeline-days">—</strong>
+          <span id="timeline-remaining">—</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="timeline-progress" style="width: 0%"></div>
+        </div>
+        <div class="timeline-row">
+          <span>Förtidsröstning</span>
+          <span id="timeline-election">Valdag —</span>
+        </div>
+      </article>
+    </section>
+
+    <section class="stats-grid" id="stats"></section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <div>
+          <h2>Utveckling över tid</h2>
+          <p id="chart-description">Jämförelse dag för dag mot tidigare val, fram till valdagen.</p>
+        </div>
+        <div class="tabs" role="tablist" aria-label="Välj graf">
+          <button class="tab active" role="tab" aria-selected="true" data-tab="eligible">Röstberättigade</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="expected">Förväntade röster</button>
+        </div>
+      </div>
+      <div class="legend" id="legend"></div>
+      <div class="chart-panel active" id="panel-eligible">
+        <div class="chart-wrap">
+          <canvas id="chartEligible" aria-label="Andel av röstberättigade"></canvas>
+        </div>
+      </div>
+      <div class="chart-panel" id="panel-expected">
+        <div class="chart-wrap">
+          <canvas id="chartExpected" aria-label="Andel av förväntade röster"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      Källa: <a href="https://www.val.se/valresultat-och-statistik/statistik-och-data/radata-val-2026" target="_blank" rel="noopener">Valmyndigheten</a>.
+      Rådata från <a id="source-link" href="#" target="_blank" rel="noopener">CSV-filen</a>, uppdateras ca kl 06 och 14.
+    </footer>
+  </div>
+
+  <script>
+    const fmt = new Intl.NumberFormat("sv-SE");
+    const pct = (value) => `${Number(value).toFixed(2).replace(".", ",")} %`;
+
+    const comparisonColors = {
+      2010: "#94a3b8",
+      2014: "#a3a36b",
+      2018: "#a78bfa",
+      2022: "#34d399",
+      2026: "#005ea8",
+    };
+
+    const chartDescriptions = {
+      eligible:
+        "Kumulativ andel av alla röstberättigade. Historiska val jämförs dag för dag i förtidsröstningsperioden.",
+      expected:
+        "Kumulativ andel av förväntat totalantal röster, om valdeltagandet blir 84,21 % som 2022.",
+    };
+
+    function cssVar(name) {
+      return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+    }
+
+    function latestPoint(series) {
+      let latest = null;
+      series.forEach((point) => {
+        if (point.daily > 0) latest = point;
+      });
+      return latest;
+    }
+
+    function formatElectionDay(dateStr) {
+      const date = new Date(`${dateStr}T12:00:00`);
+      return date.toLocaleDateString("sv-SE", { day: "numeric", month: "short" });
+    }
+
+    function daysUntil(dateStr) {
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      const target = new Date(`${dateStr}T12:00:00`);
+      return Math.max(0, Math.ceil((target - today) / 86400000));
+    }
+
+    function dayLabels(series) {
+      return series.map((point) => {
+        const date = new Date(`${point.date}T12:00:00`);
+        return date.toLocaleDateString("sv-SE", { day: "numeric", month: "short" });
+      });
+    }
+
+    function valuesByDay(points, maxDay, valueKey, stopAfterLastDaily = false) {
+      let lastActiveDay = maxDay;
+      if (stopAfterLastDaily) {
+        lastActiveDay = 0;
+        points.forEach((point) => {
+          if (point.daily > 0) lastActiveDay = point.day;
+        });
+      }
+
+      const values = Array(maxDay).fill(null);
+      points.forEach((point) => {
+        if (point.day <= lastActiveDay) {
+          values[point.day - 1] = point[valueKey];
+        }
+      });
+      return values;
+    }
+
+    function renderLegend() {
+      const years = [2010, 2014, 2018, 2022, 2026];
+      document.getElementById("legend").innerHTML = years
+        .map(
+          (year) => `
+            <span class="legend-item${year === 2026 ? " current" : ""}">
+              <span class="swatch" style="background:${comparisonColors[year]}"></span>
+              ${year}${year === 2026 ? " (pågår)" : ""}
+            </span>`
+        )
+        .join("");
+    }
+
+    function renderHero(data, latest) {
+      document.getElementById("hero-votes").textContent = fmt.format(latest.cumulative);
+      document.getElementById("hero-detail").textContent =
+        `+${fmt.format(latest.daily)} nya röster · senast ${latest.date} (dag ${latest.day})`;
+
+      const progress = Math.round((latest.day / data.max_day) * 100);
+      document.getElementById("timeline-days").textContent =
+        `Dag ${latest.day} av ${data.max_day}`;
+      document.getElementById("timeline-remaining").textContent =
+        `${daysUntil(data.election_day)} dagar till valdagen`;
+      document.getElementById("timeline-progress").style.width = `${progress}%`;
+      document.getElementById("timeline-election").textContent =
+        `Valdag ${formatElectionDay(data.election_day)}`;
+      document.getElementById("election-badge").textContent =
+        `Valdag ${formatElectionDay(data.election_day)} 2026`;
+    }
+
+    function renderStats(data, latest) {
+      const stats = [
+        {
+          label: "Av röstberättigade",
+          value: pct(latest.pct_eligible),
+          width: latest.pct_eligible,
+          hint: `${fmt.format(data.eligible_voters)} röstberättigade`,
+        },
+        {
+          label: "Av förväntade röster",
+          value: pct(latest.pct_expected_votes),
+          width: latest.pct_expected_votes,
+          hint: `Antagande ${data.reference_turnout_pct} % valdeltagande`,
+        },
+        {
+          label: "Senaste dygn",
+          value: fmt.format(latest.daily),
+          width: Math.min(100, (latest.daily / latest.cumulative) * 100),
+          hint: "Registrerade förtidsröster",
+        },
+      ];
+
+      document.getElementById("stats").innerHTML = stats
+        .map(
+          (stat) => `
+            <article class="stat-card">
+              <div class="label">${stat.label}</div>
+              <div class="value">${stat.value}</div>
+              <div class="stat-bar"><span style="width:${stat.width}%"></span></div>
+              <div class="hint">${stat.hint}</div>
+            </article>`
+        )
+        .join("");
+    }
+
+    function chartOptions(fullSeries, comparison, maxDay, valueKey, currentLabel) {
+      const grid = cssVar("--chart-grid");
+      const text = cssVar("--chart-text");
+
+      return {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: { mode: "index", intersect: false },
+        scales: {
+          x: {
+            grid: { display: false },
+            border: { display: false },
+            ticks: {
+              color: text,
+              maxRotation: 0,
+              autoSkip: true,
+              maxTicksLimit: 10,
+            },
+          },
+          y: {
+            beginAtZero: true,
+            max: 100,
+            grid: { color: grid, drawBorder: false },
+            border: { display: false },
+            ticks: {
+              color: text,
+              padding: 8,
+              callback: (value) => `${value} %`,
+            },
+          },
+        },
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: cssVar("--surface"),
+            titleColor: cssVar("--text"),
+            bodyColor: cssVar("--text-secondary"),
+            borderColor: cssVar("--border"),
+            borderWidth: 1,
+            padding: 12,
+            cornerRadius: 8,
+            displayColors: true,
+            callbacks: {
+              title: (items) => {
+                const day = items[0]?.dataIndex + 1;
+                const point = fullSeries[day - 1];
+                return point ? `${point.date} · dag ${day}` : items[0]?.label || "";
+              },
+              label: (context) => {
+                const year = context.dataset.label;
+                const day = context.dataIndex + 1;
+                const election =
+                  year === currentLabel || year === "2026"
+                    ? { points: fullSeries }
+                    : comparison.find((item) => String(item.year) === year);
+                const point = election?.points.find((entry) => entry.day === day);
+                if (!point || context.parsed.y == null) return `${year}: —`;
+                return `${year}: ${pct(point[valueKey])} (${fmt.format(point.cumulative)} röster)`;
+              },
+            },
+          },
+        },
+      };
+    }
+
+    function makeChart(canvasId, fullSeries, comparison, maxDay, valueKey, currentLabel) {
+      const labels = dayLabels(fullSeries);
+
+      const datasets = comparison.map((item) => ({
+        label: String(item.year),
+        data: valuesByDay(item.points, maxDay, valueKey),
+        borderColor: comparisonColors[item.year] || "#999",
+        backgroundColor: "transparent",
+        borderWidth: 1.5,
+        pointRadius: 0,
+        tension: 0.35,
+        spanGaps: false,
+      }));
+
+      datasets.push({
+        label: currentLabel,
+        data: valuesByDay(fullSeries, maxDay, valueKey, true),
+        borderColor: comparisonColors[2026],
+        backgroundColor: "rgba(0, 94, 168, 0.08)",
+        fill: true,
+        borderWidth: 2.5,
+        pointRadius: 3,
+        pointHoverRadius: 5,
+        pointBackgroundColor: comparisonColors[2026],
+        tension: 0.35,
+        spanGaps: false,
+      });
+
+      const ctx = document.getElementById(canvasId);
+      return new Chart(ctx, {
+        type: "line",
+        data: { labels, datasets },
+        options: chartOptions(fullSeries, comparison, maxDay, valueKey, currentLabel),
+      });
+    }
+
+    function setupTabs() {
+      const tabs = document.querySelectorAll(".tab");
+      const panels = {
+        eligible: document.getElementById("panel-eligible"),
+        expected: document.getElementById("panel-expected"),
+      };
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          tabs.forEach((item) => {
+            item.classList.toggle("active", item === tab);
+            item.setAttribute("aria-selected", item === tab ? "true" : "false");
+          });
+
+          Object.entries(panels).forEach(([key, panel]) => {
+            panel.classList.toggle("active", key === tab.dataset.tab);
+          });
+
+          document.getElementById("chart-description").textContent =
+            chartDescriptions[tab.dataset.tab];
+        });
+      });
+    }
+
+    async function init() {
+      renderLegend();
+      setupTabs();
+
+      const response = await fetch("data.json");
+      if (!response.ok) throw new Error("Kunde inte läsa data.json");
+      const data = await response.json();
+      const latest = latestPoint(data.series);
+      if (!latest) throw new Error("Ingen förtidsröstdata ännu");
+
+      const updated = new Date(data.updated_at);
+      document.getElementById("meta").textContent =
+        `Senast uppdaterad ${updated.toLocaleString("sv-SE")}. ` +
+        `Data jämförs dag för dag med valen 2010, 2014, 2018 och 2022.`;
+      document.getElementById("source-link").href = data.source_url;
+
+      renderHero(data, latest);
+      renderStats(data, latest);
+
+      makeChart(
+        "chartEligible",
+        data.series,
+        data.comparison,
+        data.max_day,
+        "pct_eligible",
+        "2026"
+      );
+      makeChart(
+        "chartExpected",
+        data.series,
+        data.comparison,
+        data.max_day,
+        "pct_expected_votes",
+        "2026"
+      );
+    }
+
+    init().catch((error) => {
+      document.getElementById("error").hidden = false;
+      document.getElementById("error").textContent = error.message;
+      document.getElementById("meta").textContent = "Kunde inte ladda data";
+    });
+  </script>
+</body>
+</html>

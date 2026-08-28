@@ -1,0 +1,33 @@
+{
+  "source_url": "https://data.val.se/filer/val2026/rostmottagning/mottagna-fortidsroster-val2026.csv",
+  "source_name": "Valmyndigheten",
+  "election_day": "2026-09-13",
+  "eligible_voters_riksdag": 8046725,
+  "reference_turnout": 0.8421,
+  "comparison_elections": [
+    {
+      "year": 2010,
+      "url": "https://historik.val.se/val/val2010/rostmottagning/fortidsrostning/mottagna_fortidsroster.skv",
+      "eligible_voters": 7066947,
+      "scale_factor": 0.5
+    },
+    {
+      "year": 2014,
+      "url": "https://historik.val.se/val/val2014/rostmottagning/fortidsrostning/mottagna_fortidsroster.skv",
+      "eligible_voters": 7564274,
+      "scale_factor": 0.5
+    },
+    {
+      "year": 2018,
+      "url": "https://historik.val.se/val/val2018/rostmottagning/fortidsrostning/mottagna_fortidsroster.skv",
+      "eligible_voters": 7504024,
+      "scale_factor": 0.5
+    },
+    {
+      "year": 2022,
+      "url": "https://data.val.se/filer/val2022/rostmottagning/fortidsroster.csv",
+      "eligible_voters": 7775390,
+      "scale_factor": 1
+    }
+  ]
+}
