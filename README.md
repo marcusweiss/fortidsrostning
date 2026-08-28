@@ -20,7 +20,7 @@ Valmyndighetens CSV uppdateras kl 06 och 14:
 1. **Andel av röstberättigade** – kumulativa förtidsröster / antal röstberättigade det aktuella året.
 2. **Andel av förväntade röster** – kumulativa förtidsröster / förväntat antal röster om valdeltagandet blir 84,21 % (som 2022).
 
-Jämförelsekurvor för 2010, 2014, 2018 och 2022 visas dag för dag i förtidsröstningsperioden.
+Jämförelsekurvor för 2010, 2014, 2018 och 2022 hämtas från Valmyndighetens historiska filer (raden `summa`/`SUMMA`). Tidigare version halverade dessa felaktigt.
 
 ## Publicera på GitHub Pages
 
