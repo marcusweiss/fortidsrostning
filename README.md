@@ -8,7 +8,7 @@ Statisk dashboard som visar mottagna förtidsröster i riksdagsvalet 2026. Data 
 
 1. Pusha repot till GitHub och aktivera **GitHub Pages** (mappen `/docs`).
 2. Se till att **Actions** är tillåtna i repot (Settings → Actions → Allow all actions).
-3. Klart. Workflowen körs **varje timme** runt 06 och 14 svensk tid (GitHub Actions kan försenas flera timmar – därför inte bara två körningar per dygn).
+3. Klart. Workflowen körs schemalagt **ca 06:30 och 14:30** svensk tid (GitHub Actions kan försenas). Trigga manuellt via **Actions → Uppdatera förtidsröster → Run workflow** om du vill ha in data direkt.
 
 Du kan också trigga en uppdatering manuellt under **Actions → Uppdatera förtidsröster → Run workflow**.
 
