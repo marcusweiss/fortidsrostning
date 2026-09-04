@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-04T08:58:19.168752+00:00",
+  "updated_at": "2026-09-04T16:31:32.890636+00:00",
   "source_url": "https://data.val.se/filer/val2026/rostmottagning/mottagna-fortidsroster-val2026.csv",
   "source_name": "Valmyndigheten",
   "election_day": "2026-09-13",
@@ -8,165 +8,165 @@
   "expected_voters": 6776147,
   "max_day": 19,
   "latest": {
-    "day": 9,
-    "date": "2026-09-03",
-    "daily": 190333,
-    "cumulative": 1381016,
-    "pct_eligible": 17.162,
-    "pct_expected_votes": 20.381
+    "day": 10,
+    "date": "2026-09-04",
+    "daily": 86656,
+    "cumulative": 1468034,
+    "pct_eligible": 18.244,
+    "pct_expected_votes": 21.665
   },
   "series": [
     {
       "day": 1,
       "date": "2026-08-26",
-      "daily": 153845,
-      "cumulative": 153845,
-      "pct_eligible": 1.912,
-      "pct_expected_votes": 2.27
+      "daily": 153590,
+      "cumulative": 153590,
+      "pct_eligible": 1.909,
+      "pct_expected_votes": 2.267
     },
     {
       "day": 2,
       "date": "2026-08-27",
-      "daily": 160798,
-      "cumulative": 314643,
-      "pct_eligible": 3.91,
-      "pct_expected_votes": 4.643
+      "daily": 160585,
+      "cumulative": 314175,
+      "pct_eligible": 3.904,
+      "pct_expected_votes": 4.636
     },
     {
       "day": 3,
       "date": "2026-08-28",
-      "daily": 142678,
-      "cumulative": 457321,
-      "pct_eligible": 5.683,
-      "pct_expected_votes": 6.749
+      "daily": 142394,
+      "cumulative": 456569,
+      "pct_eligible": 5.674,
+      "pct_expected_votes": 6.738
     },
     {
       "day": 4,
       "date": "2026-08-29",
-      "daily": 92234,
-      "cumulative": 549555,
-      "pct_eligible": 6.83,
-      "pct_expected_votes": 8.11
+      "daily": 92091,
+      "cumulative": 548660,
+      "pct_eligible": 6.818,
+      "pct_expected_votes": 8.097
     },
     {
       "day": 5,
       "date": "2026-08-30",
-      "daily": 85099,
-      "cumulative": 634654,
-      "pct_eligible": 7.887,
-      "pct_expected_votes": 9.366
+      "daily": 84941,
+      "cumulative": 633601,
+      "pct_eligible": 7.874,
+      "pct_expected_votes": 9.35
     },
     {
       "day": 6,
       "date": "2026-08-31",
-      "daily": 183711,
-      "cumulative": 818365,
-      "pct_eligible": 10.17,
-      "pct_expected_votes": 12.077
+      "daily": 183724,
+      "cumulative": 817325,
+      "pct_eligible": 10.157,
+      "pct_expected_votes": 12.062
     },
     {
       "day": 7,
       "date": "2026-09-01",
-      "daily": 180857,
-      "cumulative": 999222,
-      "pct_eligible": 12.418,
-      "pct_expected_votes": 14.746
+      "daily": 180906,
+      "cumulative": 998231,
+      "pct_eligible": 12.405,
+      "pct_expected_votes": 14.732
     },
     {
       "day": 8,
       "date": "2026-09-02",
-      "daily": 191461,
-      "cumulative": 1190683,
-      "pct_eligible": 14.797,
-      "pct_expected_votes": 17.572
+      "daily": 191742,
+      "cumulative": 1189973,
+      "pct_eligible": 14.788,
+      "pct_expected_votes": 17.561
     },
     {
       "day": 9,
       "date": "2026-09-03",
-      "daily": 190333,
-      "cumulative": 1381016,
-      "pct_eligible": 17.162,
-      "pct_expected_votes": 20.381
+      "daily": 191405,
+      "cumulative": 1381378,
+      "pct_eligible": 17.167,
+      "pct_expected_votes": 20.386
     },
     {
       "day": 10,
       "date": "2026-09-04",
-      "daily": 0,
-      "cumulative": 1381016,
-      "pct_eligible": 17.162,
-      "pct_expected_votes": 20.381
+      "daily": 86656,
+      "cumulative": 1468034,
+      "pct_eligible": 18.244,
+      "pct_expected_votes": 21.665
     },
     {
       "day": 11,
       "date": "2026-09-05",
       "daily": 0,
-      "cumulative": 1381016,
-      "pct_eligible": 17.162,
-      "pct_expected_votes": 20.381
+      "cumulative": 1468034,
+      "pct_eligible": 18.244,
+      "pct_expected_votes": 21.665
     },
     {
       "day": 12,
       "date": "2026-09-06",
       "daily": 0,
-      "cumulative": 1381016,
-      "pct_eligible": 17.162,
-      "pct_expected_votes": 20.381
+      "cumulative": 1468034,
+      "pct_eligible": 18.244,
+      "pct_expected_votes": 21.665
     },
     {
       "day": 13,
       "date": "2026-09-07",
       "daily": 0,
-      "cumulative": 1381016,
-      "pct_eligible": 17.162,
-      "pct_expected_votes": 20.381
+      "cumulative": 1468034,
+      "pct_eligible": 18.244,
+      "pct_expected_votes": 21.665
     },
     {
       "day": 14,
       "date": "2026-09-08",
       "daily": 0,
-      "cumulative": 1381016,
-      "pct_eligible": 17.162,
-      "pct_expected_votes": 20.381
+      "cumulative": 1468034,
+      "pct_eligible": 18.244,
+      "pct_expected_votes": 21.665
     },
     {
       "day": 15,
       "date": "2026-09-09",
       "daily": 0,
-      "cumulative": 1381016,
-      "pct_eligible": 17.162,
-      "pct_expected_votes": 20.381
+      "cumulative": 1468034,
+      "pct_eligible": 18.244,
+      "pct_expected_votes": 21.665
     },
     {
       "day": 16,
       "date": "2026-09-10",
       "daily": 0,
-      "cumulative": 1381016,
-      "pct_eligible": 17.162,
-      "pct_expected_votes": 20.381
+      "cumulative": 1468034,
+      "pct_eligible": 18.244,
+      "pct_expected_votes": 21.665
     },
     {
       "day": 17,
       "date": "2026-09-11",
       "daily": 0,
-      "cumulative": 1381016,
-      "pct_eligible": 17.162,
-      "pct_expected_votes": 20.381
+      "cumulative": 1468034,
+      "pct_eligible": 18.244,
+      "pct_expected_votes": 21.665
     },
     {
       "day": 18,
       "date": "2026-09-12",
       "daily": 0,
-      "cumulative": 1381016,
-      "pct_eligible": 17.162,
-      "pct_expected_votes": 20.381
+      "cumulative": 1468034,
+      "pct_eligible": 18.244,
+      "pct_expected_votes": 21.665
     },
     {
       "day": 19,
       "date": "2026-09-13",
       "daily": 0,
-      "cumulative": 1381016,
-      "pct_eligible": 17.162,
-      "pct_expected_votes": 20.381
+      "cumulative": 1468034,
+      "pct_eligible": 18.244,
+      "pct_expected_votes": 21.665
     }
   ],
   "comparison": [
